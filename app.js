@@ -11,7 +11,7 @@ server.engine(
         extname: 'hbs',
         defaultLayout: 'layout',
         layoutsDir: __dirname + '/views/layouts/',
-        partialsDir: __dirname + '/views/partials'
+        partialsDir: __dirname + '/views/partials/'
     }
 
     ));
@@ -20,6 +20,13 @@ server.engine(
 
 server.get("/", (req, res) => {
     res.render("home", { message: "Hello from node.js", });
+});
+
+server.get("/add", (req, res) => {
+    res.render("add");
+});
+server.get("/quiz", (req, res) => {
+    res.render("quiz");
 });
 
 
