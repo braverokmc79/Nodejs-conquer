@@ -1,6 +1,9 @@
 const express = require("express");
 const hbs = require("express-handlebars");
+const words = require("./db/words.json");
 const server = express();
+
+
 
 
 server.use(express.static(__dirname + "/public"));
@@ -19,7 +22,7 @@ server.engine(
 
 
 server.get("/", (req, res) => {
-    res.render("home", { message: "Hello from node.js", });
+    res.render("home", { words });
 });
 
 server.get("/add", (req, res) => {
