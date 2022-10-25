@@ -36,6 +36,11 @@ server.post("/", (req, res) => {
     res.render("home", { words: wordsFilter });
 });
 
+server.delete("/", (req, res) => {
+    let { word } = req.body;
+    word = words.filter((w) => !(w.word === word));
+})
+
 server.get("/add", (req, res) => {
     res.render("add");
 });
